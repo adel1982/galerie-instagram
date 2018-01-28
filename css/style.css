@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+}
+#conteneurGalerie {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: flex-start;
+	overflow:hidden;
+}
+.conteneurVisuel{
+    background-color:white; 
+    border: 1px solid #fff;
+    overflow:hidden; 
+    display:none;
+}
+img {  
+    width:100%; 
+}
+.conteneurVisuel a { 
+   
+}
+.conteneurVisuel p { 
+    background-color:#ffd700; color:#333333; 
+    font: 10px Helvetica, sans-serif; 
+    padding:5px; 
+    width: 100%;
+}
+
