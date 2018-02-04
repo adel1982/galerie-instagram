@@ -1,0 +1,50 @@
+#conteneurGalerie {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: flex-start;
+    overflow:hidden;
+    .conteneurVisuel{
+        background-color: $white; 
+        border: 1px solid $white;
+        overflow:hidden; 
+        display:none;
+        position: relative;
+        img {  
+            width:100%; 
+        }
+        a { 
+            position: absolute; /*-->*/ top: 0; bottom: 70px; left: 0; right: 0;
+        }
+        p { 
+            background-color: $gold; 
+            color: $mine-shaft; 
+            font-size: 12px;
+            padding:5px; 
+            position: absolute; /*-->*/ bottom: 0;
+            width: 100%; height: 70px;
+        }
+    }
+}
+
+@media (min-width:768px){
+	.conteneurVisuel { 
+        width:33.33%; 
+    }
+	.conteneurVisuel p { 
+        font-size:12px; 
+        padding:10px; 
+    }
+}
+@media (min-width:1024px){
+	.conteneurVisuel { 
+        width:25%; 
+    }
+}
+@media (min-width:1440px){
+	.conteneurVisuel { 
+        width:20%; height: 345px;
+    }
+}
