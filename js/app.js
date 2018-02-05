@@ -7,19 +7,17 @@ var visuelInstagram = function (pInfosVisuel) {
     // Conteneur global de notre image
     var conteneurVisuel = $('<div></div>').addClass('conteneurVisuel');
 
-
     // Lien permettant l'affichage de l'image
     var $lienZoom = $('<a></a>').attr({
         'href': standard,
         'target': '_blank'
     }).appendTo(conteneurVisuel);
 
-
     // l'image
-    var image = $('<img>').attr({
+    var image = $('<img>').addClass('photo').attr({
         'src': miniatures
     }).on('load', function () {
-        image.appendTo(conteneurVisuel);
+        image.prependTo(conteneurVisuel);
         $(document).trigger('galerieInstagram.imageAffiche');
     });
 
