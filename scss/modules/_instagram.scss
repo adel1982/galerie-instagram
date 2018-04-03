@@ -16,7 +16,9 @@
         display:none;
         position: relative;
         img {  
-            width:100%; 
+            max-width: 100%;
+            width: auto;
+            height: auto;
         }
         a { 
             // position: absolute; /*-->*/ top: 0; bottom: 0; left: 0; right: 0;
@@ -26,7 +28,7 @@
             color: $mine-shaft; 
             font-size: 12px;
             padding:5px; 
-            width: 100%;
+            width: 100%; min-height: 50px;
         }
     }
 }
@@ -58,6 +60,6 @@
 }
 @media (min-width:1440px){
 	.conteneurVisuel { 
-        width:20%; height: 345px;
+        width:20%;
     }
 }

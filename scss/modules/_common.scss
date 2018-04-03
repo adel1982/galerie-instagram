@@ -6,22 +6,6 @@ html {
 *, *:before, *:after {
     box-sizing: inherit;
 }
-body {
-    background-color: $white;
-    /* Repères */
-    @media (min-width:320px){
-        border-top: 5px solid purple;
-    }
-    @media (min-width:768px){
-        border-top: 5px solid red;
-    }
-    @media (min-width:1024px){
-        border-top: 5px solid orange;
-    }
-    @media (min-width:1440px){
-        border-top: 5px solid green;
-    }
-}
 input, button {
     border: 0;
 }
