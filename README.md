@@ -1,7 +1,6 @@
 # js-jquery-galerie-instagram
 Galerie photo Instagram
-
-Récupérer les photos d'un compte via l'API Instagram 
+- Récupérer les photos d'un compte via l'API Instagram 
 
 ## Amélioration à faire 
 - [] Adapter la largeur à 980px
