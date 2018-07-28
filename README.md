@@ -5,4 +5,4 @@ Galerie photo Instagram
 ## Améliorations à faire 
 - [ ] Afficher les images dans des cercles 
 - [ ] Afficher la légende de chaque image dans un tooltip 
-- [ ] Le tooltip s'affichera au cliclk de l'utilisateur sur l'image 
+- [ ] Le tooltip s'affichera au click de l'utilisateur sur l'image 
