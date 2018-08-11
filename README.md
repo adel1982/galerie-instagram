@@ -6,3 +6,4 @@ Galerie photo Instagram
 - [ ] Afficher les images dans des cercles 
 - [ ] Afficher la légende de chaque image dans un tooltip 
 - [ ] Le tooltip s'affichera au click de l'utilisateur sur l'image 
+- [ ] Migrer vers du JS Vanilla 
