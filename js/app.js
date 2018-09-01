@@ -22,7 +22,7 @@ var visuelInstagram = function (pInfosVisuel) {
   });
 
   // Légende de la photo
-  var legende = $('<p></p>').text(legende).appendTo(conteneurVisuel);
+  var legende = $('<p class="legende"></p>').text(legende).appendTo(conteneurVisuel);
 
   return conteneurVisuel;
 }

@@ -1,7 +1,8 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var browserSync = require('browser-sync');
-var runSequence = require('run-sequence');
+const gulp 				= require('gulp');
+const sass 				= require('gulp-sass');
+const browserSync = require('browser-sync');
+const runSequence = require('run-sequence');
+const sourcemaps 	= require('gulp-sourcemaps');
 
 // WATCHING
 gulp.task('watch', ['browserSync', 'sass'], function (){
@@ -19,10 +20,23 @@ gulp.task('browserSync', function() {
 	})
 })
 
+// SOURCEMAP
+gulp.task('sass', function () {
+	return gulp.src('scss/**/*.scss')
+		.pipe(sourcemaps.init())
+		.pipe(sass().on('error', sass.logError))
+		.pipe(sourcemaps.write('./maps'))
+		.pipe(gulp.dest('css'));
+});
+
 // SASS
 gulp.task('sass', function(){
 	return gulp.src('scss/**/*.scss')
 	.pipe(sass())
+	.on('error', function (err) {
+		console.log(err.toString());
+		this.emit('end');
+	})
 	.pipe(gulp.dest('css'))
 	.pipe(browserSync.reload({
 		stream: true

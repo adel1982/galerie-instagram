@@ -2,64 +2,50 @@
     $CONTENT
 \*------------------------------------*/
 #conteneurGalerie {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-content: stretch;
-    align-items: flex-start;
-    overflow:hidden;
-    .conteneurVisuel{
-        background-color: $white; 
-        border: 1px solid $white;
-        overflow:hidden; 
-        display:none;
-        position: relative;
-        img {  
-            max-width: 100%;
-            width: auto;
-            height: auto;
-        }
-        a { 
-            // position: absolute; /*-->*/ top: 0; bottom: 0; left: 0; right: 0;
-        }
-        p { 
-            background-color: $gold; 
-            color: $mine-shaft; 
-            font-size: 12px;
-            padding:5px; 
-            width: 100%; min-height: 50px;
-        }
+  outline: 1px dashed red;
+  display: flex;
+  flex-wrap: wrap;
+
+  overflow: hidden;
+  max-width: 980px;
+  margin: 0 auto;
+  padding-top: 10px;
+  text-align: center;
+  .conteneurVisuel {
+    outline: 1px dashed #ccc;
+    border-radius: 50%;
+    margin: 5px;
+    overflow: hidden;
+    position: relative;
+    width: 80px; height: 80px;
+
+    .photo {
+      width: inherit; height: inherit;
     }
+
+    a {
+      // position: absolute; /*-->*/ top: 0; bottom: 0; left: 0; right: 0;
+    }
+
+    .legende {
+      background-color: $gold;
+      color: $mine-shaft;
+      display: none;
+      font-size: 12px;
+      padding: 5px;
+      width: 100%;
+      min-height: 50px;
+    }
+  }
 }
+
 /*------------------------------------*\
     $MEDIA QUERIES
 \*------------------------------------*/
-@media (min-width:320px){
-	.conteneurVisuel { 
-        width: 50%; 
-    }
-	.conteneurVisuel p { 
-        font-size:12px; 
-        padding:10px; 
-    }
-}
-@media (min-width:768px){
-	.conteneurVisuel { 
-        width:33.33%; 
-    }
-	.conteneurVisuel p { 
-        font-size:12px; 
-        padding:10px; 
-    }
-}
-@media (min-width:1024px){
-	.conteneurVisuel { 
-        width:25%; 
-    }
-}
-@media (min-width:1440px){
-	.conteneurVisuel { 
-        width:20%;
-    }
-}
+@media (min-width:320px) {}
+
+@media (min-width:768px) {}
+
+@media (min-width:1024px) {}
+
+@media (min-width:1440px) {}
