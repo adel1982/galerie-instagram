@@ -5,12 +5,12 @@
   outline: 1px dashed red;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 
   overflow: hidden;
   max-width: 980px;
   margin: 0 auto;
-  padding-top: 10px;
-  text-align: center;
+  padding: 10px 0;
   .conteneurVisuel {
     outline: 1px dashed #ccc;
     border-radius: 50%;
@@ -18,13 +18,18 @@
     overflow: hidden;
     position: relative;
     width: 80px; height: 80px;
-
-    .photo {
-      width: inherit; height: inherit;
-    }
-
+    .photo { width: inherit; height: inherit; }
     a {
-      // position: absolute; /*-->*/ top: 0; bottom: 0; left: 0; right: 0;
+      position: absolute; top: 0; bottom: 0; left: 0; right: 0;
+      &:before {
+        background: url("../../svg/loupe.svg") no-repeat 0 0;
+        content: "";
+        color: $white;
+        display: none; 
+        position: absolute; top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        width: 25px; height: 25px;
+      }
     }
 
     .legende {
