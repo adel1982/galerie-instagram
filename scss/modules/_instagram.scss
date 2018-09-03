@@ -13,34 +13,52 @@
   padding: 10px 0;
   .conteneurVisuel {
     outline: 1px dashed #ccc;
-    border-radius: 50%;
     margin: 5px;
     overflow: hidden;
     position: relative;
-    width: 80px; height: 80px;
-    .photo { width: inherit; height: inherit; }
+    .photo { 
+      border-radius: 50%;
+      // width: inherit; height: inherit; 
+      width: 80px; height: 80px;
+    }
     a {
       position: absolute; top: 0; bottom: 0; left: 0; right: 0;
       &:before {
         background: url("../../svg/loupe.svg") no-repeat 0 0;
         content: "";
         color: $white;
-        display: none; 
-        position: absolute; top: 50%; left: 50%;
+        opacity: 0;
+        position: absolute; top: 50%;left: 50%;
         transform: translate(-50%, -50%);
+        transition: all .5s ease-in-out;
         width: 25px; height: 25px;
       }
+      &:hover:before {
+        opacity: 1;
+      }
     }
-
-    .legende {
-      background-color: $gold;
-      color: $mine-shaft;
-      display: none;
-      font-size: 12px;
-      padding: 5px;
-      width: 100%;
-      min-height: 50px;
+    .tooltip {
+      background: $gold;
+      border-radius: 50%;
+      position: absolute; bottom: 0; right: 0;
+      width: 20px; height: 20px;
+      &:before {
+        background: url("../../svg/legende.svg") no-repeat center center;
+        content: "";
+        position: absolute; top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        width: 10px; height: 10px;
+      }
     }
+  }
+  .legende {
+    background-color: $gold;
+    color: $mine-shaft;
+    display: none;
+    font-size: 12px;
+    padding: 5px;
+    width: 100%;
+    min-height: 50px;
   }
 }
 
