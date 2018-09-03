@@ -45,7 +45,7 @@ gulp.task('autoprefixer', () =>
 		browsers: ['last 2 versions'],
 		cascade: true
 	}))
-	.pipe(gulp.dest('dist'))
+	.pipe(gulp.dest('css'))
 );
 
 // SOURCEMAP
