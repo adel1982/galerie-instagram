@@ -8,7 +8,8 @@ Galerie photo Instagram
 - Gulp
 
 ## Updates à faire 
-- [x] Afficher les images dans des cercles 
+- [x] Afficher les images dans des cercles
+- [ ] Au clic, afficher les images dans une lightbox
 - [ ] Afficher la légende de chaque image dans un tooltip 
 - [ ] Le tooltip s'affichera au click de l'utilisateur sur l'image 
 - [ ] Migrer vers du JS Vanilla dans un fichier .js séparé 
