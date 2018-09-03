@@ -21,6 +21,9 @@ var visuelInstagram = function (pInfosVisuel) {
     $(document).trigger('galerieInstagram.imageAffiche');
   });
 
+  // Icône légence
+  var iconeTooltop = $('<div class="tooltip"></div>').appendTo(conteneurVisuel);
+
   // Légende de la photo
   var legende = $('<p class="legende"></p>').text(legende).appendTo(conteneurVisuel);
 
@@ -46,7 +49,10 @@ $(function () {
     // construction de l'array des visuels
     $.each(data.data, function (index, element) {
       var legende;
-      if (element.caption == null) { legende = 'Code jQuery'; } else { legende = element.caption.text; }
+      if (element.caption == null) 
+        { legende = 'Code jQuery'; } 
+      else 
+      { legende = element.caption.text; }
       arrayDesVisuels.push({
         'miniatures': element.images.low_resolution.url,
         'standard': element.images.standard_resolution.url,
