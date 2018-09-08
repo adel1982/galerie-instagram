@@ -12,4 +12,4 @@ Galerie photo Instagram
 - [ ] Au clic, afficher les images dans une lightbox
 - [ ] Afficher la légende de chaque image dans un tooltip 
 - [ ] Le tooltip s'affichera au click de l'utilisateur sur l'image 
-- [ ] Migrer vers du JS Vanilla dans un fichier .js séparé 
+- [ ] Migrer vers du JS Vanilla .js séparé 
