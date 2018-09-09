@@ -1,8 +1,33 @@
 var visuelInstagram = function (pInfosVisuel) {
-
   var miniatures  = pInfosVisuel.miniatures;
   var standard    = pInfosVisuel.standard;
   var legende     = pInfosVisuel.legende;
+
+  // Lightbox
+  $('.lightbox').click(function (e) {
+    e.preventDefault();
+    console.log('toto');
+    var url_image = $(this).attr("href");
+    var titre_image = $(this).attr("title");
+
+    var lightbox = `
+    <div id="fond-noir">
+      <div id="contenu">
+        <div id="close"></div>
+          <img src = "${url_image}"/>
+        <div id="title">${titre_image}</div>
+      </div>
+    </div>
+  `;
+    $('body').append(lightbox).hide().fadeIn(100); 
+  });
+  // -------- PETITE MODIF DU CODE INITIAL -------- */
+
+  // La fonction LIVE est dépréciée, du coup on utilise .on sur le document en ciblant #close par le click - On utilise cela car la div #fond-noir n'existe pas dans le DOM au chargement de la page.
+
+  $(document).on('click', '#close', function () { // Je clique sur le bouton "close" pour fermer et supprimer la lightbox du code HTML
+    $('#fond-noir').remove();
+  });
 
   // Conteneur global de notre image
   var conteneurVisuel = $('<div></div>').addClass('conteneurVisuel');
@@ -21,15 +46,14 @@ var visuelInstagram = function (pInfosVisuel) {
     $(document).trigger('galerieInstagram.imageAffiche'); // Event perso 
   });
 
-
   // Légende de la photo
   var legende = $('<p class="legende"></p>').text(legende).appendTo(conteneurVisuel);
 
   return conteneurVisuel;
 }
 
-$(function () {
 
+$(function () {
   var visuel;
   var visuelEnCours = 0;
   var arrayDesVisuels = [];
@@ -79,4 +103,11 @@ $(function () {
   // event galerieInstagram.imageAffiche
   $(document).on('galerieInstagram.imageAffiche', construitVisuel);
 
+
+
+
+  
+
+
 });
+
