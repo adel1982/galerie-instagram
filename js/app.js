@@ -6,7 +6,6 @@ var visuelInstagram = function (pInfosVisuel) {
   // Lightbox
   $('.lightbox').click(function (e) {
     e.preventDefault();
-    console.log('toto');
     var url_image = $(this).attr("href");
     var titre_image = $(this).attr("title");
 
@@ -21,11 +20,8 @@ var visuelInstagram = function (pInfosVisuel) {
   `;
     $('body').append(lightbox).hide().fadeIn(100); 
   });
-  // -------- PETITE MODIF DU CODE INITIAL -------- */
 
-  // La fonction LIVE est dépréciée, du coup on utilise .on sur le document en ciblant #close par le click - On utilise cela car la div #fond-noir n'existe pas dans le DOM au chargement de la page.
-
-  $(document).on('click', '#close', function () { // Je clique sur le bouton "close" pour fermer et supprimer la lightbox du code HTML
+  $(document).on('click', '#close', function () { 
     $('#fond-noir').remove();
   });
 
