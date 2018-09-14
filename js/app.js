@@ -1,4 +1,5 @@
 var visuelInstagram = function (pInfosVisuel) {
+
   var miniatures  = pInfosVisuel.miniatures;
   var standard    = pInfosVisuel.standard;
   var legende     = pInfosVisuel.legende;
@@ -42,14 +43,15 @@ var visuelInstagram = function (pInfosVisuel) {
     $(document).trigger('galerieInstagram.imageAffiche'); // Event perso 
   });
 
+
   // Légende de la photo
   var legende = $('<p class="legende"></p>').text(legende).appendTo(conteneurVisuel);
 
   return conteneurVisuel;
 }
 
-
 $(function () {
+
   var visuel;
   var visuelEnCours = 0;
   var arrayDesVisuels = [];
@@ -99,11 +101,4 @@ $(function () {
   // event galerieInstagram.imageAffiche
   $(document).on('galerieInstagram.imageAffiche', construitVisuel);
 
-
-
-
-  
-
-
 });
-
