@@ -113,6 +113,9 @@ body {
 \*------------------------------------*/
 #fond-noir {
   background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: 0;
   left: 0;
@@ -138,9 +141,7 @@ body {
       left: 9px;
       top: -1px; }
   #fond-noir #contenu {
-    position: relative;
-    width: 630px;
-    margin: 15% auto; }
+    position: relative; }
     #fond-noir #contenu img {
       background-color: #fff;
       padding: 5px; }

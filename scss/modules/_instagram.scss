@@ -57,6 +57,9 @@
 \*------------------------------------*/
 #fond-noir {
   background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute; top: 0; left: 0; right: 0; bottom: 0; 
   z-index: 9999;
   #close {
@@ -76,15 +79,12 @@
   }
   #contenu {
     position: relative;
-    width: 630px;
-    margin: 15% auto;
     img {
       background-color: $white;
       padding: 5px;
     }
   }
 }
-
 #title {
   background: $black;
   color: $white;

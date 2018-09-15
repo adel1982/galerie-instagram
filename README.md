@@ -12,4 +12,3 @@ Galerie photo Instagram
 ## Updates à faire 
 - [x] Afficher les images dans des cercles
 - [ ] Au clic, afficher les images dans une lightbox
-- [ ] Migrer vers du JS Vanilla .js séparé 
