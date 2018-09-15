@@ -67,13 +67,18 @@ body {
   padding: 10px 0; }
   #conteneurGalerie .conteneurVisuel {
     outline: 1px dashed #ccc;
+    border-radius: 50%;
+    border: 1px solid #ccc;
     margin: 5px;
     overflow: hidden;
-    position: relative; }
+    position: relative;
+    width: 80px;
+    height: 80px; }
     #conteneurGalerie .conteneurVisuel .photo {
-      border-radius: 50%;
-      width: 80px;
-      height: 80px; }
+      width: inherit;
+      height: inherit;
+      object-fit: cover;
+      object-position: right; }
     #conteneurGalerie .conteneurVisuel a {
       position: absolute;
       top: 0;
@@ -104,11 +109,13 @@ body {
     min-height: 50px; }
 
 /*------------------------------------*\
-<<<<<<< HEAD
     $LIGHTBOX
 \*------------------------------------*/
 #fond-noir {
   background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: 0;
   left: 0;
@@ -134,9 +141,7 @@ body {
       left: 9px;
       top: -1px; }
   #fond-noir #contenu {
-    position: relative;
-    width: 630px;
-    margin: 15% auto; }
+    position: relative; }
     #fond-noir #contenu img {
       background-color: #fff;
       padding: 5px; }
@@ -152,8 +157,6 @@ body {
   border-radius: 5px; }
 
 /*------------------------------------*\
-=======
->>>>>>> parent of 9f59c02... Adding lightbox
     $MEDIA QUERIES
 \*------------------------------------*/
 

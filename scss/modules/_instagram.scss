@@ -13,13 +13,17 @@
   padding: 10px 0;
   .conteneurVisuel {
     outline: 1px dashed #ccc;
+    border-radius: 50%;
+    border: 1px solid #ccc;
     margin: 5px;
     overflow: hidden;
     position: relative;
+    width: 80px; height: 80px;
     .photo { 
-      border-radius: 50%;
-      // width: inherit; height: inherit; 
-      width: 80px; height: 80px;
+      width: inherit;
+      height: inherit;
+      object-fit: cover;
+      object-position: right;
     }
     a {
       position: absolute; top: 0; bottom: 0; left: 0; right: 0;
@@ -53,6 +57,9 @@
 \*------------------------------------*/
 #fond-noir {
   background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute; top: 0; left: 0; right: 0; bottom: 0; 
   z-index: 9999;
   #close {
@@ -72,15 +79,12 @@
   }
   #contenu {
     position: relative;
-    width: 630px;
-    margin: 15% auto;
     img {
       background-color: $white;
       padding: 5px;
     }
   }
 }
-
 #title {
   background: $black;
   color: $white;
