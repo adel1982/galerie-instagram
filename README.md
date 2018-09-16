@@ -1,6 +1,8 @@
 # js-jquery-galerie-instagram 
 Galerie photo Instagram
 - Récupérer les photos d'un compte via l'API Instagram
+
+# Ressource
 - https://www.instagram.com/developer/endpoints/users/#get_users_media_recent_self
 - http://instagram.pixelunion.net/
 
@@ -11,4 +13,4 @@ Galerie photo Instagram
 
 ## Updates à faire 
 - [x] Afficher les images dans des cercles
-- [ ] Au clic, afficher les images dans une lightbox
+- [x] Au clic, afficher les images dans une lightbox
