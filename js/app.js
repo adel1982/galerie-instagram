@@ -3,36 +3,36 @@ var visuelInstagram = function (pInfosVisuel) {
   var standard    = pInfosVisuel.standard;
   var legende     = pInfosVisuel.legende;
 
-  // Lightbox
-  $('.lightbox').click(function (e) {
-    e.preventDefault();
-    var url_image = $(this).attr("href");
-    var titre_image = $(this).attr("title");
-
-    var lightbox = `
-    <div id="fond-noir">
-      <div id="contenu">
-        <div id="close"></div>
-          <img src = "${url_image}"/>
-        <div id="title">${titre_image}</div>
-      </div>
-    </div>
-  `;
-    $('body').append(lightbox).hide().fadeIn(100); 
-  });
-
-  $(document).on('click', '#close', function () { 
-    $('#fond-noir').remove();
-  });
-
   // Conteneur global de notre image
   var conteneurVisuel = $('<div></div>').addClass('conteneurVisuel');
 
   // Lien permettant l'affichage de l'image
-  var $lienZoom = $('<a class="lightbox"></a>').attr({
+  var lienZoom = $('<a class="lightbox"></a>').attr({
     'href': standard,
-    'target': '_blank'
   }).appendTo(conteneurVisuel);
+
+
+  // Lightbox
+  $(lienZoom).each(function() {
+    $(this).on('click', function(e) {
+      e.preventDefault();
+      var url_image = $(this).attr('href');
+      var lightbox = `
+      <div id="fond-noir">
+        <div id="contenu">
+          <div id="close"></div>
+            <img src = "${url_image}"/>
+          <div id="title">${legende}</div>
+        </div>
+      </div>
+    `;
+      $('<p id="title"></p>').text(legende);
+      $('body').append(lightbox).hide().fadeIn(100);
+        $(document).on('click', '#close', function () { 
+          $('#fond-noir').remove();
+        });
+    });
+  });
 
   // l'image
   var image = $('<img>').addClass('photo').attr({
@@ -42,8 +42,7 @@ var visuelInstagram = function (pInfosVisuel) {
     $(document).trigger('galerieInstagram.imageAffiche'); // Event perso 
   });
 
-  // Légende de la photo
-  var legende = $('<p class="legende"></p>').text(legende).appendTo(conteneurVisuel);
+  
 
   return conteneurVisuel;
 }
@@ -68,11 +67,10 @@ $(function () {
     console.log(data);
     // construction de l'array contenant les visuels
     $.each(data.data, function (index, element) {
-      var legende;
-      var tooltip = $('.tooltip');
+
       
       if (element.caption == null) 
-        { tooltip.addClass('nolegende'); }
+        $('#title').css('display','none');
       else 
         { legende = element.caption.text; }
 

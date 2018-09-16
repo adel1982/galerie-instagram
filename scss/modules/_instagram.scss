@@ -56,7 +56,7 @@
     $LIGHTBOX
 \*------------------------------------*/
 #fond-noir {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,34 +64,37 @@
   z-index: 9999;
   #close {
     background-color: $black;
-    border: 3px solid $white;
+    border: 4px solid $white;
     border-radius: 50%;
     cursor: pointer;
-    position: absolute; top: -25px; right: -40px;
+    position: absolute; top: -20px; right: -22px;
     transform: rotate(45deg);
     width: 40px; height: 40px;
     &::before {
       color: $white;
       content: "+";
       font-size: 40px;
-      position: relative; left: 9px; top: -1px;
+      position: relative; left: 5px; top: -5px;
     }
   }
   #contenu {
     position: relative;
     img {
       background-color: $white;
+      max-width: 540px;
       padding: 5px;
     }
   }
 }
 #title {
-  background: $black;
-  color: $white;
+  background: $gold;
+  color: $black;
   display: inline-block;
-  position: absolute; bottom: 30px; left: 30px;
   padding: 3px 30px;
-  border-radius: 5px; 
+  position: absolute; bottom: 30px; left: 50%;
+  text-align: center;
+  transform: translateX(-50%);
+  width: 70%;
 }
 
 /*------------------------------------*\
