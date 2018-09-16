@@ -2,7 +2,7 @@
 Galerie photo Instagram
 - Récupérer les photos d'un compte via l'API Instagram
 
-# Ressource
+## Ressource
 - https://www.instagram.com/developer/endpoints/users/#get_users_media_recent_self
 - http://instagram.pixelunion.net/
 
