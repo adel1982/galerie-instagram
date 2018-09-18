@@ -134,7 +134,7 @@ body {
       content: "+";
       font-size: 40px;
       position: relative;
-      left: 5px;
+      left: 6px;
       top: -5px; }
   #fond-noir #contenu {
     position: relative; }
@@ -147,13 +147,13 @@ body {
   background: #ffd700;
   color: #000;
   display: inline-block;
-  padding: 3px 30px;
+  padding: 5px 30px;
   position: absolute;
-  bottom: 30px;
+  bottom: 7px;
   left: 50%;
   text-align: center;
   transform: translateX(-50%);
-  width: 70%; }
+  width: 98%; }
 
 /*------------------------------------*\
     $MEDIA QUERIES

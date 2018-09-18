@@ -74,7 +74,7 @@
       color: $white;
       content: "+";
       font-size: 40px;
-      position: relative; left: 5px; top: -5px;
+      position: relative; left: 6px; top: -5px;
     }
   }
   #contenu {
@@ -90,11 +90,11 @@
   background: $gold;
   color: $black;
   display: inline-block;
-  padding: 3px 30px;
-  position: absolute; bottom: 30px; left: 50%;
+  padding: 5px 30px;
+  position: absolute; bottom: 7px; left: 50%;
   text-align: center;
   transform: translateX(-50%);
-  width: 70%;
+  width: 98%;
 }
 
 /*------------------------------------*\
