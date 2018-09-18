@@ -1,7 +1,7 @@
-var visuelInstagram = function (pInfosVisuel) {
-  var miniatures  = pInfosVisuel.miniatures;
-  var standard    = pInfosVisuel.standard;
-  var legende     = pInfosVisuel.legende;
+var visuelInstagram = function(pInfosVisuel) {
+  var miniatures    = pInfosVisuel.miniatures;
+  var standard      = pInfosVisuel.standard;
+  var legende       = pInfosVisuel.legende;
 
   // Conteneur global de notre image
   var conteneurVisuel = $('<div></div>').addClass('conteneurVisuel');
@@ -11,9 +11,8 @@ var visuelInstagram = function (pInfosVisuel) {
     'href': standard,
   }).appendTo(conteneurVisuel);
 
-
   // Lightbox
-  $(lienZoom).each(function() {
+  $(lienZoom).each(function () {
     $(this).on('click', function(e) {
       e.preventDefault();
       var url_image = $(this).attr('href');
@@ -22,15 +21,30 @@ var visuelInstagram = function (pInfosVisuel) {
         <div id="contenu">
           <div id="close"></div>
             <img src = "${url_image}"/>
-          <div id="title">${legende}</div>
+            <div id="title">${legende}</div>
         </div>
       </div>
     `;
       $('<p id="title"></p>').text(legende);
       $('body').append(lightbox).hide().fadeIn(100);
-        $(document).on('click', '#close', function () { 
-          $('#fond-noir').remove();
-        });
+      $(document).on('click', '#close', function () {
+        $('#fond-noir').remove();
+      });
+      $( "#title:empty" ).css( "display", "none" );
+    });
+
+    // Fermer la photo si l'utilisateur click en dehors.
+    var clickInside = false;
+
+    $('#fond-noir').hover(function () {
+      clickInside = true;
+    }, function () {
+      clickInside = false;
+    });
+
+    $("body").mouseup(function () {
+      if (!clickInside)
+        $('#fond-noir').remove();
     });
   });
 
@@ -42,18 +56,19 @@ var visuelInstagram = function (pInfosVisuel) {
     $(document).trigger('galerieInstagram.imageAffiche'); // Event perso 
   });
 
-  
-
   return conteneurVisuel;
+
+  
 }
 
 
 $(function () {
   var visuel;
-  var visuelEnCours = 0;
-  var arrayDesVisuels = [];
+  var visuelEnCours     = 0;
+  var arrayDesVisuels   = [];
   var nbVisuels;
-  var conteneurGalerie = $('#conteneurGalerie');
+  var conteneurGalerie  = $('#conteneurGalerie');
+  var conteneurLegende  = $('#title');
 
   // Chargement du flux instagram
   // &callback signifie que le flux sera pris en charge par une function après sont téléchargement
@@ -65,15 +80,14 @@ $(function () {
   // La galerie
   function construitGalerie(data) {
     console.log(data);
+
     // construction de l'array contenant les visuels
-    $.each(data.data, function (index, element) {
+    $.each(data.data, function (index, element) { 
+      // data.data http://prntscr.com/kvwelm // Element représente chaque objet de l'array
 
-      
-      if (element.caption == null) 
-        $('#title').css('display','none');
-      else 
-        { legende = element.caption.text; }
-
+      if (element.caption == null )
+        legende = "";
+      else { legende = element.caption.text; }
       arrayDesVisuels.push({
         'miniatures': element.images.low_resolution.url,
         'standard': element.images.standard_resolution.url,
@@ -96,12 +110,6 @@ $(function () {
 
   // event galerieInstagram.imageAffiche
   $(document).on('galerieInstagram.imageAffiche', construitVisuel);
-
-
-
-
-  
-
 
 });
 
