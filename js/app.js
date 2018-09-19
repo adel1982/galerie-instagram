@@ -31,6 +31,7 @@ var visuelInstagram = function (pInfosVisuel) {
       $(document).on('click', '#close', function () {
         $('#fond-noir').remove();
       });
+      $( "#title:empty" ).css( "display", "none" );
     });
 
     // Fermer la photo si l'utilisateur click en dehors.
@@ -57,15 +58,18 @@ var visuelInstagram = function (pInfosVisuel) {
   });
 
   return conteneurVisuel;
+
+  
 }
 
 
 $(function () {
   var visuel;
-  var visuelEnCours = 0;
-  var arrayDesVisuels = [];
+  var visuelEnCours     = 0;
+  var arrayDesVisuels   = [];
   var nbVisuels;
-  var conteneurGalerie = $('#conteneurGalerie');
+  var conteneurGalerie  = $('#conteneurGalerie');
+  var conteneurLegende  = $('#title');
 
   // Chargement du flux instagram
   // &callback signifie que le flux sera pris en charge par une function après sont téléchargement
@@ -77,14 +81,14 @@ $(function () {
   // La galerie
   function construitGalerie(data) {
     console.log(data);
+
     // construction de l'array contenant les visuels
-    $.each(data.data, function (index, element) {
+    $.each(data.data, function (index, element) { 
+      // data.data http://prntscr.com/kvwelm // Element représente chaque objet de l'array
 
-
-      if (element.caption == null)
-        $('#title').css('display', 'none');
+      if (element.caption == null )
+        legende = "";
       else { legende = element.caption.text; }
-
       arrayDesVisuels.push({
         'miniatures': element.images.low_resolution.url,
         'standard': element.images.standard_resolution.url,
