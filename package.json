@@ -25,6 +25,6 @@
   "homepage": "https://github.com/adel1982/galerie_instagram#readme",
   "description": "Galerie photo Instagram",
   "dependencies": {
-    "gulp-rename": "^1.4.0",
+    "gulp-rename": "^1.4.0"
   }
 }
