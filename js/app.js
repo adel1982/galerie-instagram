@@ -1,7 +1,7 @@
-var visuelInstagram = function (pInfosVisuel) {
-  var miniatures = pInfosVisuel.miniatures;
-  var standard = pInfosVisuel.standard;
-  var legende = pInfosVisuel.legende;
+var visuelInstagram = function(pInfosVisuel) {
+  var miniatures    = pInfosVisuel.miniatures;
+  var standard      = pInfosVisuel.standard;
+  var legende       = pInfosVisuel.legende;
 
   // Conteneur global de notre image
   var conteneurVisuel = $('<div></div>').addClass('conteneurVisuel');
@@ -11,10 +11,9 @@ var visuelInstagram = function (pInfosVisuel) {
     'href': standard,
   }).appendTo(conteneurVisuel);
 
-
   // Lightbox
   $(lienZoom).each(function () {
-    $(this).on('click', function (e) {
+    $(this).on('click', function(e) {
       e.preventDefault();
       var url_image = $(this).attr('href');
       var lightbox = `
