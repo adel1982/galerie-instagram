@@ -12,6 +12,7 @@
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-cssmin": "^0.2.0",
+    "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.4",
     "run-sequence": "^2.2.1"
   },
@@ -25,7 +26,6 @@
   "homepage": "https://github.com/adel1982/galerie_instagram#readme",
   "description": "Galerie photo Instagram",
   "dependencies": {
-    "gulp-rename": "^1.4.0",
-    "gulp-sourcemaps": "^2.6.4"
+    "gulp-rename": "^1.4.0"
   }
 }

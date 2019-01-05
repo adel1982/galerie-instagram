@@ -2,10 +2,8 @@ const gulp 					= require('gulp');
 const sass 					= require('gulp-sass');
 const browserSync 	= require('browser-sync');
 const cssmin 				= require('gulp-cssmin');
-// const rename 				= require('gulp-rename');
 const runSequence 	= require('run-sequence');
 const sourcemaps 		= require('gulp-sourcemaps');
-const autoprefixer 	= require('gulp-autoprefixer');
 
 // WATCHING
 gulp.task('watch', ['browserSync', 'sass'], function (){
@@ -16,11 +14,11 @@ gulp.task('watch', ['browserSync', 'sass'], function (){
 
 // BROWSERSYNC
 gulp.task('browserSync', function() {
-	browserSync({
+	browserSync.init(["css/*.css", "js/*.js"], {
 		server: {
-			baseDir: './'
-		},
-	})
+				baseDir: "./"
+		}
+  });
 })
 
 // SASS
@@ -32,21 +30,9 @@ gulp.task('sass', function(){
 		this.emit('end');
 	})
 	.pipe(gulp.dest('css'))
-	.pipe(browserSync.reload({
-		stream: true
-	}))
+	.pipe(browserSync.stream())
 	.pipe(sourcemaps.write())
 });
-
-// AUTOPREFIXER
-gulp.task('autoprefixer', () =>
-	gulp.src('css/style.css')
-	.pipe(autoprefixer({
-		browsers: ['last 2 versions'],
-		cascade: true
-	}))
-	.pipe(gulp.dest('css'))
-);
 
 // SOURCEMAP
 gulp.task('sass', function () {
@@ -69,7 +55,7 @@ gulp.task('cssmin', function () {
 
 // SEQUENCAGE - TASK DEFAULT
 gulp.task('default', function (callback) {
-	runSequence(['sass', 'autoprefixer','cssmin', 'browserSync', 'watch'],
+	runSequence(['sass', 'cssmin', 'browserSync', 'watch'],
 	callback
 	)
 })
