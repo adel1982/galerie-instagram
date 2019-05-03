@@ -9,7 +9,6 @@ Galerie photo Instagram
 ## Technologie(s) utilisée(s)
 - HTML / CSS
 - jQuery
-- Gulp
 
 ## Updates à faire 
 - [x] Afficher les images dans des cercles

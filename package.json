@@ -3,25 +3,16 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node-sass -w --output-style compressed scss -o css --source-map-root file://${PWD}/ --source-map-embed true"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.24.7",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^6.0.0",
-    "gulp-cssmin": "^0.2.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.4",
-    "run-sequence": "^2.2.1"
+    "node-sass": "^4.12.0"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/adel1982/galerie_instagram.git"
-  },
-  "bugs": {
-    "url": "https://github.com/adel1982/galerie_instagram/issues"
   },
   "homepage": "https://github.com/adel1982/galerie_instagram#readme",
   "description": "Galerie photo Instagram",
@@ -29,4 +20,3 @@
     "gulp-rename": "^1.4.0"
   }
 }
- 
