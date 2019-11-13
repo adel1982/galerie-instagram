@@ -72,7 +72,7 @@ $(function () {
 
   // Chargement du flux instagram
   // &callback signifie que le flux sera pris en charge par une function après sont téléchargement
-  var urlFlux = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=32456951.1677ed0.61f2ea6674d74d09b8323a040695c80e&callback=?';
+  var urlFlux = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=32456951.1677ed0.5a64beccac8e4494b468f64cf26134fc&callback=?';
   $.getJSON(urlFlux, {
     format: 'json'
   }).done(construitGalerie);
