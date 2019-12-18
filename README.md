@@ -5,6 +5,6 @@
 - http://instagram.pixelunion.net/
 
 ## Used Technologys
-- HTML / SCSS 
+- HTML / SASS 
 - jQuery
 
